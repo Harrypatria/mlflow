@@ -1,0 +1,12 @@
+name: housing-price-prediction
+
+python_env: python_env.yaml
+
+entry_points:
+  main:
+    parameters:
+      dataset: { type: string, default: "diabetes" }
+      model_type: { type: string, default: "rf" }
+      n_estimators: { type: int, default: 100 }
+      max_depth: { type: int, default: 6 }
+    command: "python train_model.py {dataset} {model_type} {n_estimators} {max_depth}"
